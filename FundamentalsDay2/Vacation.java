@@ -2,59 +2,69 @@ import java.util.Scanner;
 
 public class Vacation {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int people = Integer.parseInt(scanner.nextLine());
-        String typeOfPeople = scanner.nextLine();
-        String dayOfWeek = scanner.nextLine();
+        Scanner scan = new Scanner(System.in);
 
-        double price = 0.0;
+        int number = Integer.parseInt(scan.nextLine());
+        String people = scan.nextLine();
+        String day = scan.nextLine();
 
-        switch (typeOfPeople) {
-            case "Students":
-                if (dayOfWeek.equals("Friday")) {
-                    price = 8.45;
-                } else if (dayOfWeek.equals("Saturday")) {
-                    price = 9.80;
-                } else if (dayOfWeek.equals("Sunday")) {
-                    price = 10.46;
-                }
-                price *= people;
-                if (people >= 30) {
-                    price *= 0.85;
-                }
+        double price = 0;
+        if (day.equalsIgnoreCase("Friday") && people.equalsIgnoreCase("Students")){
+            price = number * 8.45;
+            if(number >= 30){
+                price = price * 0.85;
+            }
 
-                break;
-            case "Business":
-                if (dayOfWeek.equals("Friday")) {
-                    price = 10.90;
-                } else if (dayOfWeek.equals("Saturday")) {
-                    price = 15.60;
-                } else if (dayOfWeek.equals("Sunday")) {
-                    price = 16.0;
-                }
-                price *= people;
-                if (people >= 100) {
-                    price *= 0.90;
-                }
+        }else if (day.equalsIgnoreCase("Friday") && people.equalsIgnoreCase("Business")){
+            price = number * 10.90;
+            if(number >= 100){
+                price = price - (10 * 10.90);
+            }
 
-                break;
-            case "Regular":
-                if (dayOfWeek.equals("Friday")) {
-                    price = 15.0;
-                } else if (dayOfWeek.equals("Saturday")) {
-                    price = 20.0;
-                } else if (dayOfWeek.equals("Sunday")) {
-                    price = 22.50;
-                }
-                price *= people;
-                if ((people >= 10) && (people <= 20)) {
-                    price *= 0.95;
-                }
-                break;
+        }else if (day.equalsIgnoreCase("Friday") && people.equalsIgnoreCase("Regular")){
+            price = number * 15;
+            if(number >= 10 && number <= 20){
+                price = price * 0.95;
+            }
+
+        }else if (day.equalsIgnoreCase("Saturday") && people.equalsIgnoreCase("Students")){
+            price = number * 9.80;
+            if(number >= 30){
+                price = price * 0.85;
+            }
+
+        }else if (day.equalsIgnoreCase("Saturday") && people.equalsIgnoreCase("Business")){
+            price = number * 15.60;
+            if(number >= 100){
+                price = price - (10 * 15.60);
+            }
+
+        }else if (day.equalsIgnoreCase("Saturday") && people.equalsIgnoreCase("Regular")){
+            price = number * 20;
+            if(number >= 10 && number <= 20){
+                price = price * 0.95;
+            }
+
+        }else if (day.equalsIgnoreCase("Sunday") && people.equalsIgnoreCase("Students")){
+            price = number * 10.46;
+            if(number >= 30){
+                price = price * 0.85;
+            }
+
+        }else if (day.equalsIgnoreCase("Sunday") && people.equalsIgnoreCase("Business")){
+            price = number * 16;
+            if(number >= 100){
+                price = price - (10 * 16);
+            }
+
+        }else if (day.equalsIgnoreCase("Sunday") && people.equalsIgnoreCase("Regular")){
+            price = number * 22.50;
+            if(number >= 10 && number <= 20){
+                price = price * 0.95;
+            }
 
         }
         System.out.printf("Total price: %.2f", price);
-
 
     }
 }
