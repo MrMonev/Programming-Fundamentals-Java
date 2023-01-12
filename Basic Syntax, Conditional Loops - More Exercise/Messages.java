@@ -47,8 +47,8 @@ public class Messages {
             } else if
                (pressingNumbers == '7')       {if (numOfSymbols == 1) {
                     massage.append("p");} else if (numOfSymbols == 2) {
-                    massage.append("r");} else if (numOfSymbols == 3) {
-                    massage.append("s");} else if (numOfSymbols == 4) {
+                    massage.append("q");} else if (numOfSymbols == 3) {
+                    massage.append("r");} else if (numOfSymbols == 4) {
                     massage.append("s");
             }
             } else if
