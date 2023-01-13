@@ -75,6 +75,7 @@ public class TreasureHunt {
                             temporaryChest[i] = chest[i];
                         }
                         chest = temporaryChest;
+
                     } else if (stealItems >= 0) {
                         for (int i = 0; i < chest.length; i++) {
                             System.out.print(chest[i]);
@@ -93,7 +94,7 @@ public class TreasureHunt {
         //In the end, output the average treasure gain, which is the sum of all chest items
         // length divided by the count of all items inside the chest formatted to the second decimal point:
 
-        String chestCount = String.join(" ", chest);
+        String chestCount = String.join("", chest);
         int counter = 0;
 
         for (int i = 0; i < chestCount.length(); i++) {
