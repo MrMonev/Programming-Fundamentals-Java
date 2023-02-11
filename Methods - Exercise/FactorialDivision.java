@@ -20,7 +20,7 @@ public class FactorialDivision {
     // метод, който намира факториела (long) на дадено число и ми го връща
     public static long calculateFact (int number) {
         // 5! = 1*2*3*4*5 = 120
-        long fact = 1; // стойността на факториела (ще очаства в някакви умножения за това започваме от 1)
+        long fact = 1; // стойността на факториела (ще участва в някакви умножения за това започваме от 1)
         for (int i = 1; i <= number ; i++) {
             fact = fact * i;
         }
