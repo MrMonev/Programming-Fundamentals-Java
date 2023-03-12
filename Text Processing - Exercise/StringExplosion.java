@@ -4,18 +4,27 @@ public class StringExplosion {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String inputText = scanner.nextLine();
-        StringBuilder builder = new StringBuilder(inputText);
+        String input = scanner.nextLine();
+        //"abv>1>1>2>2asdasd"
+        StringBuilder text = new StringBuilder(input);
 
-        for (int index = 0; index <= builder.length() - 1 ; index++) {
+        int totalStrength = 0; //сила
+        for (int position = 0; position < text.length() ; position++) {
+            char currentSymbol = text.charAt(position);
+            if (currentSymbol == '>') {
+                //char ('1') -> string ("1") -> int (1)
+                //атака
+                int attackStrength = Integer.parseInt(text.charAt(position + 1) + ""); //сила на атаката
+                totalStrength += attackStrength;
+            } else if (currentSymbol != '>' && totalStrength > 0) {
+                //премахване
+                text.deleteCharAt(position);
+                totalStrength--;
+                position--;
 
-            if(builder.charAt(index) == builder.charAt(index + 1)) {
-                builder.deleteCharAt(index + 1);
-                index--;
             }
         }
-
-        System.out.println(builder);
+        System.out.println(text);
 
     }
 }

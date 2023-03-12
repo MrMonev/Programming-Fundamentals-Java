@@ -33,5 +33,29 @@ public class demo {
         // true(ако се съдържа)
         // false (ако не се съдържа)
         System.out.println(name.contains("Skina"));
+
+        //8. Започва с определен текст -> true (ако започва), false(ако не започва)
+        System.out.println(name.startsWith("DA"));
+
+        //9. Завършва на определен текст -> ture (ако завършва), false(ако не завършва)
+        System.out.println(name.endsWith("Ne"));
+
+        //10. Премахва интервалите в началото и края на текста
+        System.out.println(" Ivaylo    ".trim());
+
+        //11. Заменя първото срещане на даден текст или символ
+        name.replace("lo", "Ne");// Ivaylo - "IvayNe"
+        name.replace('I', 'B'); // Ivaylo - "Baylo"
+
+        //12. заменя всички срещания на текста
+        name.replaceAll("a", "b"); // Ivaylo - "IvBylo"
+
+        //13. Повтаряме текста даден брой пъти
+        System.out.println(name.repeat(5)); //IvayloIvayloIvayloIvayloIvaylo
+
+        //14. Взимаме текст, който е част от друг текст
+
+        System.out.println(name.substring(2));     // "Ivaylo" - "aylo"
+        System.out.println(name.substring(1,5)); // Ivaylo - "vayl"
     }
 }

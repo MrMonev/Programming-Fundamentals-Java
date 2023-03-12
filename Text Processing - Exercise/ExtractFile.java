@@ -6,6 +6,7 @@ public class ExtractFile {
 
         String path = scanner.nextLine();
         //"C:\Internal\training-internal\Template.pptx"
+
         int indexLast = path.lastIndexOf("\\");
         String fullFileName = path.substring(indexLast + 1); //"Template.pptx"
 
